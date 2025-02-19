@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TabNavigatorDemo",
-    "slug": "TabNavigatorDemo",
+    "name": "CocktailProject",
+    "slug": "CocktailProject",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
