@@ -19,7 +19,7 @@ export default function CocktailCard({navigation, drink}) {
             <Pressable style={styles.seeMoreBtn} onPress={() => navigation.navigate("Details", {drinkId: drink.idDrink})}>
                 <Text style={styles.text}>{"Voir les détails"}</Text>
                 <View style={styles.icon}>
-                    <Ionicons name={'chevron-forward-outline'} size={24} color={'#3880ff'} />
+                    <Ionicons name={'chevron-forward-outline'} size={24} color={'rgb(0, 110, 255)'} />
                 </View>
             </Pressable>
         </View>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-    text: { fontSize: 18, color: '#3880ff' },
+    text: { fontSize: 18, color: 'rgb(0, 110, 255)' },
 
     icon: { position: 'absolute', right: 6, backgroundColor: 'rgba(255, 255, 255, 1)', padding: 8, borderRadius: 50 },
 });

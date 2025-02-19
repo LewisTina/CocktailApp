@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from "react";
-import { Text, View, Button, ActivityIndicator, ScrollView } from "react-native";
+import { View, ActivityIndicator, ScrollView } from "react-native";
 import styles from "../theme/styles";
 import CocktailCard from "../components/cocktailCard";
 import axios from 'axios';

@@ -1,12 +1,12 @@
 import React from "react";
 import { StatusBar } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStackNavigator from "./HomeStackNavigator";
 import BasketStackNavigator from "./BasketStackNavigator";
 import FavoriteStackNavigator from "./FavoriteStackNavigator";
 import SearchStackNavigator from "./SearchStackNavigator";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +33,7 @@ const RootTabNavigator = () => {
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: "#3880ff",
+          tabBarActiveTintColor: "rgb(0, 110, 255)",
           tabBarInactiveTintColor: "gray",
           // Hiding tab navigator header to show only stack header
           headerShown: false,

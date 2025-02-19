@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SettingsScreen from "../screens/SettingsScreen";
+import FavoriteScreen from "../screens/FavoriteScreen";
 import { screenOptions } from "../theme/styles";
 
 // Screen stack for settings tab
@@ -12,7 +12,7 @@ const FavoriteStackNavigator = () => {
       initialRouteName="Home"
       screenOptions={screenOptions}
     >
-      <FavoriteStack.Screen name="Settings" component={SettingsScreen} />
+      <FavoriteStack.Screen name="Favoris" component={FavoriteScreen} />
     </FavoriteStack.Navigator>
   );
 };

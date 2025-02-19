@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SettingsScreen from "../screens/SettingsScreen";
 import { screenOptions } from "../theme/styles";
+import SearchScreen from "../screens/SearchScreen";
 
 // Screen stack for settings tab
 const SearchStack = createNativeStackNavigator();
@@ -12,7 +12,7 @@ const SearchStackNavigator = () => {
       initialRouteName="Home"
       screenOptions={screenOptions}
     >
-      <SearchStack.Screen name="Settings" component={SettingsScreen} />
+      <SearchStack.Screen name="Recherche" component={SearchScreen} />
     </SearchStack.Navigator>
   );
 };
