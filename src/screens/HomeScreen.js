@@ -1,6 +1,5 @@
 import React,{ useEffect, useState } from "react";
 import { View, ActivityIndicator, ScrollView } from "react-native";
-import styles from "../theme/styles";
 import CocktailCard from "../components/cocktailCard";
 import axios from 'axios';
 
@@ -24,10 +23,10 @@ const HomeScreen = ({ navigation }) => {
     const retrieveDrinks = async () => {
       let drinks = [];
       for (let i = 0; i < 10; i++) {
-      const drink = await retrieveDrinkRandomly();
-      if (drink) {
-        drinks.push(drink);
-      }
+        const drink = await retrieveDrinkRandomly();
+        if (drink) {
+          drinks.push(drink);
+        }
       }
       setDrinks(drinks);
       setIsLading(false);
