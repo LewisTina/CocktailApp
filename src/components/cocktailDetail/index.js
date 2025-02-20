@@ -1,8 +1,8 @@
-import { View, StyleSheet, ImageBackground, Text, Pressable } from "react-native";
+import { View, StyleSheet, ImageBackground, Text } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useMemo } from "react";
 import IngredientItem from "../ingredientItem";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import FavoriteToggle from "../favoriteToggle";
 
 export default function CocktailDetail({cocktail}) {
     let i = 1;
@@ -27,9 +27,7 @@ export default function CocktailDetail({cocktail}) {
                     </View>
 
                     <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-                        <Pressable style={styles.favoriteButton}>
-                            <Ionicons name={'heart-outline'} size={24} color={'white'} />
-                        </Pressable>
+                        <FavoriteToggle drink={cocktail}/>
                     </View>
                 </View>
                 </LinearGradient>
@@ -50,7 +48,7 @@ export default function CocktailDetail({cocktail}) {
 
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     coverWrapper: {
       width: '100%',
       aspectRatio: 0.8,

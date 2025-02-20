@@ -1,6 +1,7 @@
 import { View, StyleSheet, ImageBackground, Text, Pressable } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import Ionicons from "react-native-vector-icons/Ionicons";
+import FavoriteToggle from "../favoriteToggle";
 
 export default function CocktailCard({navigation, drink}) {
     return (
@@ -9,9 +10,7 @@ export default function CocktailCard({navigation, drink}) {
         colors={['transparent', '#000000']}
         style={styles.frame}>
         <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-            <Pressable style={styles.favoriteButton}>
-                <Ionicons name={'heart-outline'} size={24} color={'white'} />
-            </Pressable>
+            <FavoriteToggle drink={drink} key={drink.idDrink}/>
         </View>
         <View style={styles.details}>
             <Text style={styles.category}>{drink.strCategory} • {drink.strAlcoholic}</Text>
@@ -52,13 +51,6 @@ const styles = StyleSheet.create({
     category: {
         fontSize: 18,
         color: 'gray',
-    },
-
-    favoriteButton : {
-        borderColor: 'rgba(255, 255, 255, 0.5)',
-        borderWidth: 1,
-        padding: 10,  
-        borderRadius: 50,
     },
 
     seeMoreBtn : {

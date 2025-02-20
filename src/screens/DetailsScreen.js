@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ScrollView, ActivityIndicator } from "react-native";
+import { ScrollView, ActivityIndicator, View } from "react-native";
 import axios from 'axios';
 import CocktailDetail from "../components/cocktailDetail";
 
@@ -30,7 +30,9 @@ const DetailsScreen = ({ route }) => {
     <ScrollView alwaysBounceVertical={true}>
       {
         isLoading ?
-        <ActivityIndicator size="small" color="grey" style={{margin: "auto"}}/>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <ActivityIndicator size="small" color="grey" style={{margin: "auto"}}/>
+        </View>
         :
         <CocktailDetail cocktail={drink}/>
       }
