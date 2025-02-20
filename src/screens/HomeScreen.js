@@ -38,12 +38,12 @@ const HomeScreen = ({ navigation }) => {
 
   return (
 
-    <ScrollView alwaysBounceVertical={true} style={styles.container}>
+    <ScrollView alwaysBounceVertical={true} style={{flex: 1}}>
       {
         isLoading ?
         <ActivityIndicator size="small" color="grey" style={{margin: "auto"}}/>
         :
-        <View style={{gap: 20}}>
+        <View style={{gap: 4, paddingBottom: '128'}}>
           {
             drinks.map((item) => {
               return <CocktailCard key={item.idDrink} navigation={navigation} drink={item}/> 

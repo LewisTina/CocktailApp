@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet } from "react-native";
 import { useSelector, useDispatch } from 'react-redux';
 import { addToFavorite, removeFromFavorite } from '../../features/favorites';
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default function FavoriteToggle({drink}) {
@@ -9,12 +9,11 @@ export default function FavoriteToggle({drink}) {
     const favorites = useSelector((state) => state.favorites.list)
     const [isFavorite, setIsFavorite] = useState(favorites.find((item) => item.id === drink.idDrink))
     
-    useState(() => {
-        setIsFavorite(favorites.find((item) => item.idDrink === drink.idDrink))
+    useEffect(() => {
+        setIsFavorite(!!(favorites.find((item) => item.idDrink === drink.idDrink)))
     }, [favorites])
 
     const handleFavorite = useCallback(() => {
-        setIsFavorite(!isFavorite)
         dispatch( isFavorite ? removeFromFavorite(drink.idDrink) : addToFavorite(drink) )
     }, [isFavorite])
 

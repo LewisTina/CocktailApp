@@ -1,6 +1,6 @@
 import React from "react";
 import { View, ScrollView } from "react-native";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from "../theme/styles";
 import EmptyPage from "../components/emptyPage";
 import CocktailCard from "../components/cocktailCard";
@@ -10,8 +10,8 @@ const FavoriteScreen = ({ navigation }) => {
 
   return (
     favorites.length > 0 ?
-    <ScrollView alwaysBounceVertical={true} style={styles.container}>
-        <View style={{gap: 20}}>
+    <ScrollView alwaysBounceVertical={true}>
+        <View style={{gap: 4}}>
           {
             favorites.map((item) => {
               return <CocktailCard key={item.idDrink} navigation={navigation} drink={item}/> 
