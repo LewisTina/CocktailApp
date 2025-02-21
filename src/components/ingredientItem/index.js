@@ -15,7 +15,6 @@ export default function IngredientItem({ ingredient, measure }) {
     }, [cart])
 
     useEffect(() => {
-        console.log('This is the cart', cart)
         findInCart()
     }, [cart])
 

@@ -22,9 +22,13 @@ const HomeScreen = ({ navigation }) => {
   useEffect(() => {
     const retrieveDrinks = async () => {
       let drinks = [];
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 50; i++) {
         const drink = await retrieveDrinkRandomly();
         if (drink) {
+          if(drinks.some((item) => item.idDrink === drink.idDrink)) {
+            i--;
+            continue;
+          }
           drinks.push(drink);
         }
       }

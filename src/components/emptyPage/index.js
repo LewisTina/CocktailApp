@@ -6,7 +6,7 @@ export default function EmptyPage({navigation, theme, icon}) {
         <View style={styles.wrapper}>
             <Ionicons name={icon} size={64} color={theme} />
             <Text style={{fontSize: 16, maxWidth: '70%', textAlign: 'center'}}>Vous n'avez cocktail en favoris pour le moment</Text>
-            <Pressable style={[styles.action, {backgroundColor: theme}]} onPress={() => navigation.navigate("Home")}>
+            <Pressable style={[styles.action, {backgroundColor: theme}]} onPress={() => navigation.navigate("Accueil")}>
                 <Text style={{color: "white", fontSize: 16}}>Voir les cocktails</Text>
             </Pressable>
         </View>
