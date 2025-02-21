@@ -33,7 +33,7 @@ const RootTabNavigator = () => {
       })}
     >
       <Tab.Screen name="Accueil" component={HomeScreen} />
-      <Tab.Screen name="Recherche" component={SearchScreen} />
+      <Tab.Screen name="Recherche" component={SearchScreen} options={{headerShown: false}}/>
       <Tab.Screen name="Favoris" component={FavoriteScreen} />
       <Tab.Screen name="Panier" component={CartScreen} />
     </Tab.Navigator>
