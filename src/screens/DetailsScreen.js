@@ -27,12 +27,10 @@ const DetailsScreen = ({ route }) => {
   }, [drinkId]);
 
   return (
-    <ScrollView alwaysBounceVertical={true}>
-      {
-        isLoading ?
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <ScrollView alwaysBounceVertical={true} contentContainerStyle={{flexGrow: 1}} >
+        {
+          isLoading ?
           <ActivityIndicator size="small" color="grey" style={{margin: "auto"}}/>
-        </View>
         :
         <CocktailDetail cocktail={drink}/>
       }

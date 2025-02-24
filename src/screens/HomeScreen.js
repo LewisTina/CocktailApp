@@ -41,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
 
   return (
 
-    <ScrollView alwaysBounceVertical={true} style={{flex: 1}}>
+    <ScrollView alwaysBounceVertical={true} contentContainerStyle={{flexGrow: 1}} >
       {
         isLoading ?
         <ActivityIndicator size="small" color="grey" style={{margin: "auto"}}/>

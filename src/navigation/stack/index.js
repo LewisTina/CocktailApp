@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { screenOptions } from "../../theme/styles";
 import SearchScreen from "../../screens/SearchScreen";
+import SearchResultScreen from "../../screens/SearchResultScreen";
 import FavoriteScreen from "../../screens/FavoriteScreen";
 import CartScreen from "../../screens/CartScreen";
 import DetailsScreen from "../../screens/DetailsScreen";
@@ -16,7 +17,14 @@ const RootStackNavigator = () => {
         <NavigationContainer>
             <StatusBar barStyle="default" animated backgroundColor="#fafafa" />
             <RootStack.Navigator initialRouteName="Accueil">
-                <SearchStack.Screen name="Recherche" component={SearchScreen} options={screenOptions}/>
+                <SearchStack.Screen name="Recherche" component={SearchScreen}/>
+                <SearchStack.Screen 
+                  name="search-result"
+                  component={SearchResultScreen}
+                  options={({route}) => ({
+                    headerBackButtonDisplayMode: 'minimal',
+                    title: route.params.value,
+                  })}/>
                 <FavoriteStack.Screen name="Favoris" component={FavoriteScreen} options={screenOptions}/>
                 <BasketStack.Screen name="Panier" component={CartScreen} />
                 <HomeStack.Screen name="Accueil" component={RootTabNavigator} options={{ ...screenOptions, headerShown: false }}/>
@@ -40,7 +48,8 @@ const SearchStackNavigator = () => {
       initialRouteName="Recherche"
       screenOptions={screenOptions}
     >
-      <SearchStack.Screen name="Recherche" component={SearchScreen} options={screenOptions}/>
+      <SearchStack.Screen name="Recherche" component={SearchScreen}/>
+      <SearchStack.Screen name="search-result" component={SearchResultScreen}/>
       <SearchStack.Screen name="Details" component={DetailsScreen} 
         options={{
           headerTransparent: true,
